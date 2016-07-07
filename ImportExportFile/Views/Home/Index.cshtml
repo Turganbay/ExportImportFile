@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Import/Export File</h2>
+
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" , @class = "uploadForm"}))
+{
+
+    <div>
+        <input type="file" id="FileUpload" name="FileUpload" required data-val="true" data-val-required="please select a file" />
+        <!--input type="submit" id="Submit" class="submit" value="Upload" title="Click to upload file" /> -->
+        <input type="button" id="btn" value="btn" />
+    </div>
+
+}
+
+@Html.ActionLink("Export", "Export", null, new { @class = "exportLink" })
+
+<div class="result">
+    <div class="dataTable"> 
+        @Html.Action("getData")
+     </div>
+     <img src="~/Content/loading.gif" style="width:60px; display:none;" class="loading" />
+</div>
+
+@section scripts{
+<script>
+    $(document).ready(function () {
+
+        $("#btn").click(function(){
+        
+            console.log("Processing");
+
+            
+            var isFileExist = ($("#FileUpload").val() != "" ? true : false);
+
+            console.log(isFileExist);
+
+            if (isFileExist) {
+
+                $(".dataTable").html("");
+                $(".loading").css("display", "block");
+
+
+                var formdata = new FormData();
+                var fileInput = $("#FileUpload")[0];
+
+                console.log(fileInput);
+
+                formdata.append(fileInput.files[0].name, fileInput.files[0]);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "/Home/Upload/");
+
+                xhr.send(formdata);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+
+                        if (JSON.parse(xhr.responseText) == "ok") {
+
+                            $.ajax({
+                                url: "/Home/getData/",
+                                success: function (data) {
+                                    $(".loading").css("display", "none");
+                                    $(".dataTable").html(data);
+                                }
+                            });
+
+
+                        }
+
+
+                    }
+                }
+
+            }
+            else {
+                alert("Select the excel file");
+            }
+
+        });
+
+    });
+</script>
+
+}
