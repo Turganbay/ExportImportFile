@@ -177,10 +177,10 @@ namespace ImportExportFile.Repository
                     }
 
 
-                     //   repo.InsertRegions(listRegions);
-                    //    repo.InsertProducts(listProducts);
-                    //    repo.InsertCompany(listCompany);
-                     //   repo.InsertQuantity(listQuantity);  
+                    //    repo.InsertRegions(listRegions);
+                     //   repo.InsertProducts(listProducts);
+                      //  repo.InsertCompany(listCompany);
+                        repo.InsertQuantity(listQuantity);  
 
         }
 

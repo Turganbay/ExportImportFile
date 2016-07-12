@@ -156,6 +156,10 @@
     <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database\ImportExport.mdf" />
+    <Content Include="App_Data\Database\ImportExport_log.ldf">
+      <DependentUpon>ImportExport.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -212,6 +216,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="App_Data\ExcelFiles\Импорт.xlsx" />
     <None Include="Scripts\jquery-1.8.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -246,9 +251,7 @@
     <Content Include="Views\Home\ViewTable.cshtml" />
     <Content Include="Views\Home\getData.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
