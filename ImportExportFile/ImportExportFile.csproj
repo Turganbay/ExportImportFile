@@ -156,8 +156,8 @@
     <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Database\ImportExport.mdf" />
-    <Content Include="App_Data\Database\ImportExport_log.ldf">
+    <Content Include="Database\ImportExport.mdf" />
+    <Content Include="Database\ImportExport_log.ldf">
       <DependentUpon>ImportExport.mdf</DependentUpon>
     </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
