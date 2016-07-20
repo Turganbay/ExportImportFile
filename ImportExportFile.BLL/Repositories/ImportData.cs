@@ -1,4 +1,4 @@
-﻿using ImportExportFile.Models;
+﻿using ImportExportFile.BLL.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace ImportExportFile.Repository
+namespace ImportExportFile.BLL.Repositories
 {
     public class ImportData
     {
@@ -177,7 +177,7 @@ namespace ImportExportFile.Repository
                     }
 
 
-                    //    repo.InsertRegions(listRegions);
+                       // repo.InsertRegions(listRegions);
                      //   repo.InsertProducts(listProducts);
                       //  repo.InsertCompany(listCompany);
                         repo.InsertQuantity(listQuantity);  

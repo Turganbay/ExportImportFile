@@ -1,7 +1,7 @@
 ﻿using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
-using ImportExportFile.Models;
+using ImportExportFile.BLL.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,7 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-namespace ImportExportFile.Repository
+namespace ImportExportFile.BLL.Repositories
 {
     public class ExportData
     {
